@@ -1,4 +1,4 @@
-function Education({ education }) {
+function Education({ education = [] }) {
   return (
     <section className="card">
       <h2>Education</h2>
@@ -22,6 +22,7 @@ function Education({ education }) {
           ))}
         </tbody>
       </table>
+
     </section>
   );
 }

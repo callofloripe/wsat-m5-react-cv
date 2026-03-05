@@ -8,8 +8,8 @@ export default function About() {
       </p>
         <div style={{ textAlign: "center"}}>
       <img
-        src="/images/profile.jpg"
-        alt="Floripe Callo profile photo"
+         src={`${import.meta.env.BASE_URL}images/profile.jpg`}
+        alt="Flor Callo profile photo"
         width="200"
         style={{ borderRadius: "10px"}}
       />

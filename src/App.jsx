@@ -17,12 +17,19 @@ function App() {
 
   return (
     <div className={darkMode ? "dark-mode" : ""}>
-      <button
-        className="dark-toggle"
-        onClick={() => setDarkmode(!darkMode)}
-      >
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
+  <button
+    className="dark-toggle"
+    onClick={() => setDarkmode(!darkMode)}
+    style={{
+      display: "block",
+      margin: "20px auto",
+      padding: "10px 18px",
+      fontSize: "16px",
+      cursor: "pointer"
+    }}
+  >
+    {darkMode ? "Light Mode" : "Dark Mode"}
+  </button>
 
       <Header />
       <About />

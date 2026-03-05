@@ -19,5 +19,6 @@ export default function About() {
 }
 
 <div className="profile-container">
-    <img src="/images/profile.jpg" alt="Floripe Callo profile photo" />
+    <img src="/wsat-m5-react-cv/images/profile.jpg" alt="Profile" />
 </div>
+

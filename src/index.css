@@ -136,22 +136,35 @@ header {
   display: block;
 }
 
- h1, h2, p {
-  color: black;
-}
-
-body {
-  color: black;
-}
-
-body.dark {
-  color: black;
-}
+ 
 
 .profile-container {
   text-align: center;
   margin-top: center;
 }
+
+ /* Default (light mode) */
+body {
+  background-color: white;
+  color: black; /* text is dark in light mode */
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212; /* dark background */
+  color: white; /* text turns white */
+}
+
+/* Optional: ensure headings also follow body color */
+body h1,
+body h2,
+body h3,
+body p,
+body span,
+body a {
+  color: inherit; /* inherit color from body */
+}
+
 .profile-container img {
   width: 200px;
   border-radius:10px;
@@ -161,4 +174,14 @@ body.dark {
   position: absolute;
   top:20px;
   left: 20px;
+}
+
+body {
+  background-color: white;
+  color: black; /* text color for light mode */
+}
+
+body.dark-mode {
+  background-color: #121212; /* dark background */
+  color: white; /* change text color to light */
 }

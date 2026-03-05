@@ -1,7 +1,12 @@
+import { useState } from "react";
+
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent! (Demo only)");
+    alert(`Thank you ${name}!`);
   };
 
   return (
@@ -14,7 +19,11 @@ export default function Contact() {
           <a href="mailto:callofloripe@gmail.com">callofloripe@gmail.com</a>
           <br />
           GitHub:{" "}
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             github.com
           </a>
         </p>
@@ -25,12 +34,27 @@ export default function Contact() {
         <h2>Contact Me</h2>
 
         <form id="contactForm" onSubmit={handleSubmit}>
-          <input type="text" id="name" placeholder="Name" required />
+          {/* Name input */}
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
           <br /><br />
 
-          <input type="email" id="email" placeholder="Email" required />
+          {/* Email input */}
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
           <br /><br />
 
+          {/* Message textarea */}
           <textarea placeholder="Message" required />
           <br /><br />
 

@@ -1,4 +1,4 @@
-export default function Education() {
+function Education({ education }) {
   return (
     <section className="card">
       <h2>Education</h2>
@@ -6,30 +6,24 @@ export default function Education() {
       <table>
         <thead>
           <tr>
+            <th>Year</th>
             <th>Program</th>
             <th>Institution</th>
-            <th>Year Graduated</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td>Kindergarten</td>
-            <td>Kabulawan Elementary School</td>
-            <td>2012</td>
-          </tr>
-          <tr>
-            <td>Grade School</td>
-            <td>Kabulawan Elementary School</td>
-            <td>2018</td>
-          </tr>
-          <tr>
-            <td>College</td>
-            <td>USTP - CDO Campus</td>
-            <td>2028</td>
-          </tr>
+          {education.map((item, index) => (
+            <tr key={index}>
+              <td>{item.year}</td>
+              <td>{item.program}</td>
+              <td>{item.school}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>
   );
 }
+
+export default Education;

@@ -4,22 +4,46 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
-function App() {
-const [darkMode, setDarkmode] = useState(false);
-return (
-  <div className={darkMode ? "dark-mode" : ""}>
-    <button className="dark-toggle"
-    onClick={() => setDarkmode(!darkMode)}>
-      {darkMode ? "light Mode" : "Dark Mode"}
-    </button>
 
-    <Header />
-    <About />
-    <Skills />
-    <Education />
-    <Contact />
-  </div>
-);
+function App() {
+  const [darkMode, setDarkmode] = useState(false);
+
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React"
+  ];
+
+  return (
+    <div className={darkMode ? "dark-mode" : ""}>
+      <button
+        className="dark-toggle"
+        onClick={() => setDarkmode(!darkMode)}
+      >
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </button>
+
+      <Header />
+      <About />
+      <Skills skills={skills} />
+      <Education />
+      <Contact />
+    </div>
+  );
 }
 
-export default App;
+export default App; 
+const education = [
+{
+year: "2024",
+program: "BS Information Technology",
+school: "University of Science and Technology of Southern Philippines"
+},
+{
+year: "2022",
+program: "Senior High School",
+school: "Misamis Oriental Institute of Science and Technology"
+}
+];
+

@@ -35,6 +35,7 @@ function App() {
       <button
         className="dark-toggle"
         onClick={() => setDarkMode(!darkMode)}
+        
         style={{
           display: "block",
           margin: "20px auto",

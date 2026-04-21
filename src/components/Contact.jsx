@@ -6,7 +6,25 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you ${name}!`);
+
+    fetch("http://localhost/cv-api/process.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name: name })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.message) {
+          alert(data.message);
+        } else {
+          alert("Unexpected error occurred.");
+        }
+      })
+      .catch(() => {
+        alert("Error connecting to server.");
+      });
   };
 
   return (

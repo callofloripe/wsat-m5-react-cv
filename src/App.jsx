@@ -6,8 +6,8 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 
 function App() {
-
   const [darkMode, setDarkMode] = useState(false);
+  const [showSkills, setShowSkills] = useState(true);
 
   const skills = [
     "HTML",
@@ -32,10 +32,10 @@ function App() {
   return (
     <div className={darkMode ? "dark-mode" : ""}>
 
+      {/* Dark Mode Button */}
       <button
         className="dark-toggle"
         onClick={() => setDarkMode(!darkMode)}
-        
         style={{
           display: "block",
           margin: "20px auto",
@@ -49,7 +49,24 @@ function App() {
 
       <Header />
       <About />
-      <Skills skills={skills} />
+
+      {/* 🔥 NEW TOGGLE BUTTON */}
+      <button
+        onClick={() => setShowSkills(!showSkills)}
+        style={{
+          display: "block",
+          margin: "20px auto",
+          padding: "10px 18px",
+          fontSize: "16px",
+          cursor: "pointer"
+        }}
+      >
+        {showSkills ? "Hide Skills" : "Show Skills"}
+      </button>
+
+      {/* 🔥 CONDITIONAL RENDERING */}
+      {showSkills && <Skills skills={skills} />}
+
       <Education education={education} />
       <Contact />
 

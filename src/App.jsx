@@ -4,6 +4,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
+import ContactList from "./components/ContactList"; // ✅ NEW
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -50,7 +51,7 @@ function App() {
       <Header />
       <About />
 
-      {/* 🔥 NEW TOGGLE BUTTON */}
+      {/* Toggle Skills */}
       <button
         onClick={() => setShowSkills(!showSkills)}
         style={{
@@ -64,11 +65,16 @@ function App() {
         {showSkills ? "Hide Skills" : "Show Skills"}
       </button>
 
-      {/* 🔥 CONDITIONAL RENDERING */}
+      {/* Conditional Skills */}
       {showSkills && <Skills skills={skills} />}
 
       <Education education={education} />
+
+      {/* Contact Form (saves to DB) */}
       <Contact />
+
+      {/* 🔥 NEW: Display saved data from database */}
+      <ContactList />
 
     </div>
   );
